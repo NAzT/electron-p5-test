@@ -3,14 +3,8 @@ var serial
 var portListDiv
 var portSelect
 var selectedPort
-var rescanPorts
-var connectButton
-var disconnectButton
 var serialConsoleEnabled = false
 var serialConsole
-var clearButton
-var sendMessage
-var sendButton
 var consoleBuffer = []
 var lastConsoleLogTime = Date.now()
 var LOGWAIT = 500
@@ -26,16 +20,6 @@ function setup () {
   portSelect = createSelect()
   portSelect.option('No Ports Found')
   portSelect.parent(select('#portselectdiv'))
-
-  rescanPorts = select('#rescan')
-  rescanPorts.mousePressed(function () {
-    serial.list()
-  })
-
-  connectButton = select('#connect')
-  connectButton.mousePressed(connectPressed)
-  disconnectButton = select('#disconnect')
-  disconnectButton.mousePressed(disconnectPressed)
 
   // Instantiate our SerialPort object
   serial = new p5.SerialPort()
@@ -111,45 +95,10 @@ function gotList (thelist) {
 }
 
 function portSelected () {
+  console.log('port selected.')
   selectedPort = portSelect.value()
-  connectButton.show()
-}
-
-function connectPressed () {
-  if (!selectedPort) {
-    selectedPort = portSelect.value()
-  }
-  seriallog('Opening: ' + selectedPort)
   serial.open(selectedPort)
-
-  connectButton.hide()
-  disconnectButton.show()
-}
-
-function disconnectPressed () {
-  seriallog('Closing: ' + selectedPort)
-  serial.close()
-
-  disconnectButton.hide()
-  connectButton.show()
-}
-
-function serialConsoleSwitch () {
-  if (serialConsoleEnabledCheckbox.checked()) {
-    serialConsoleEnabled = true
-  } else {
-    serialConsoleEnabled = false
-  }
-}
-
-function clearPressed () {
-  serialConsole.elt.value = ''
-}
-
-function sendPressed () {
-  console.log('write', sendMessage.elt.value)
-  serial.write(sendMessage.elt.value)
-  sendMessage.elt.value = ''
+  portSelect.hide()
 }
 
 function gotOpen () {

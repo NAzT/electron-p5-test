@@ -5,7 +5,7 @@ const app = electron.app  // Module to control application life.
 const BrowserWindow = electron.BrowserWindow  // Module to create native browser window.
 
 const {Menu} = require('electron')
-require('electron-reload')(__dirname)
+require('electron-reload')(__dirname);
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
