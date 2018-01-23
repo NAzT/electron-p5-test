@@ -1,0 +1,16 @@
+{
+  "name": "CMMC electron p5",
+  "version": "0.1.0",
+  "main": "server/main.js",
+  "dependencies": {
+    "electron-reload": "^1.2.2",
+    "p5.serialserver": "*"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^1.7.5",
+    "electron-rebuild": "^1.6.0"
+  }
+}
