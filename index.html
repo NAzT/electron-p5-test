@@ -7,26 +7,51 @@
     <script language="javascript" type="text/javascript" src="client/sketch.js"></script>
     <script language="javascript" type="text/javascript" src="client/script.js"></script>
     <link rel="stylesheet" type="text/css" href="client/css/style.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/bulma/css/bulma.css"/>
 </head>
 <body>
 <!--<div>-->
 <!--<b>IP</b>-->
 <!--<div id="serialIp"></div>-->
 <!--</div>-->
-<h1 align="center" class="site-title"><a href="#" rel="home"><img
-        src="client/logo.png"></a></h1>
-<div id="availablePorts" class="center">
-    <!--<b>Available Ports</b>-->
-    <!--<div id="serialports">-->
-    <!--No Ports Found-->
-    <!--</div>-->
+<!--<b>Available Ports</b>-->
+<!--<div id="serialports">-->
+<!--No Ports Found-->
+<!--</div>-->
 </div>
-<div id="portselectdiv" class="center">
-    <!--<b>Select Serial Port:</b>-->
-</div>
-<div>
-    <!--<b>Serial Console:</b> <br/>-->
-    <h1 id="nat" class="center"></h1>
-</div>
+<div class="center">
+    <div id="portselectdiv" class="center"></div>
+    <h1 align="center" class="site-title"><a href="#" rel="home"><img
+            src="client/logo.png"></a></h1>
+    <div id="availablePorts" class="center">
+        <div class="columns">
+            <div class="column">
+                เวลา
+            </div>
+            <div class="column">
+                <span id="nat" class="center">0</span>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                ความเร็ว
+            </div>
+            <div class="column">
+                0
+            </div>
+
+        </div>
+        <div class="columns">
+            <div class="column">
+                แต้มสุขภาพ
+            </div>
+            <div class="column">
+                0
+            </div>
+        </div>
+    </div>
+    <div>
+        <!--<b>Serial Console:</b> <br/>-->
+    </div>
 </body>
 </html>
